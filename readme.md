@@ -16,11 +16,11 @@
 
 ​		基于 Streamlit 的交互式应用程序，用于对象检测。主要功能包括从图像检测物体，并使用 YOLOv8 模型进行目标检测。当用户上传鸟类照片，系统会利用 YOLOv8 进行图像识别，同时使用 ChatGLM2 语言模型提供相关科普描述。识别结果和位置会显示在界面上，并形成一个问题，送入 ChatGLM2，生成鸟类的科普描述，最后通过界面展示给用户。
 
-![](md_images\birds_recongnazation.drawio.png)
+![image-birds_recongnazation.drawio](md_images\birds_recongnazation.drawio.png)
 
 ​		首先进入Streamlit的前端界面
 
-![24f121b5b8c3928434cde9d171863088](md_images\24f121b5b8c3928434cde9d171863088.png)
+![image-24f121b5b8c3928434cde9d171863088](md_images\24f121b5b8c3928434cde9d171863088.png)
 
 ​		在后端，首先加载了经过微调的 ChatGLM2 语言模型，这个模型用于生成科普描述。接着加载了针对鸟类识别进行训练和减枝的 YOLOv8 目标识别模型，用于识别鸟类。
 
