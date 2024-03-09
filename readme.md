@@ -173,11 +173,11 @@ class_id x_center  y_center  w  h
 
 ​		在[tensorboard可视化](https://so.csdn.net/so/search?q=tensorboard可视化&spm=1001.2101.3001.7020)约束训练过程BN参数的分布变化，随着训练进行（纵轴是epoch），BN层参数会逐渐从最上面的正太分布趋向于0附近。以下是正常训练和稀疏训练的BN层参数值的分布图：
 
-![](md_images\b170090ffdf83f3f30a3a1e7a3a142d8.png)
+![](md_images/b170090ffdf83f3f30a3a1e7a3a142d8.png)
 
 ​                                                                                                                         上图为正常训练
 
-![](md_images\addeb9b1d866517556c0920b53ddc105.png)
+![](md_images/addeb9b1d866517556c0920b53ddc105.png)
 
 ​                                                                                                                        上图为稀疏训练
 
@@ -185,7 +185,7 @@ class_id x_center  y_center  w  h
 
 
 
-![](md_images\417f99c29e9f7ed58e1ca78a1ca1f666.png)
+![](md_images/417f99c29e9f7ed58e1ca78a1ca1f666.png)
 
 ​		修改系数1e-2为1e-3将会使稀疏化的速度减慢，因为它将影响到L1正则化的强度，从而减缓权重稀疏化的速度。这样做的好处是权重稀疏化过程更加平滑，可以在一定程度上减少对模型精度的影响。
 
@@ -307,13 +307,13 @@ print("done")
 
 运行完会得到prune.pt和prune.onnx可以在netron.app网站拖入onnx文件查看是否剪枝成功了，成功的话可以看到某些通道数字为单数或者一些不规律的数字。
 
-![](md_images\ac2dabf32e3a53bf268f047e74ec2874.png)
+![](md_images/ac2dabf32e3a53bf268f047e74ec2874.png)
 
 #### 进行finetun训练，通过恢复训练使得模型map回调。
 
 以下是减枝完后模型，剪枝前后各层通道数对比
 
-![](md_images\f8a9f0d4e2c8a472e15b29961ec14454.png)
+![](md_images/f8a9f0d4e2c8a472e15b29961ec14454.png)
 
 ### CHATGLM微调
 
