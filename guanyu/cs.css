@@ -1,0 +1,155 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: url('images/image5.jpg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+}
+
+main {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    margin: 0 10%;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+    flex: 1;
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+.content-area {
+    display: flex; /* 使用Flexbox */
+    justify-content: space-between; /* 子项之间的间隔 */
+    align-items: flex-start; /* 顶部对齐 */
+}
+
+.top-row {
+    display: flex; /* 使用Flexbox */
+    justify-content: space-around; /* 子项之间的间隔 */
+    align-items: flex-start; /* 顶部对齐 */
+}
+
+#news,
+#notices,
+#main-image {
+    flex: 1; /* flex子项 */
+    margin: 10px; /* 添加一些空间 */
+    /* 根据需要设置最大宽度 */
+}
+
+#main-image img {
+    width: 100%; /* 图片宽度 */
+    height: auto; /* 高度自适应 */
+}
+
+#long-image-section {
+    width: 100%; /* 长图宽度 */
+    margin-top: 20px; /* 与上方内容的间距 */
+}
+
+#long-image-section img {
+    width: 100%; /* 图片宽度 */
+    height: auto; /* 高度自适应 */
+    display: block; /* 块级元素，占满整个容器宽度 */
+}
+
+
+#feedback-form {
+    position: fixed;
+    top: 100px;
+    right: 10px;
+    width: 300px;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input[type="email"],
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.form-group button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #003366;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.form-group button:hover {
+    background-color: #0055cc;
+}
+
+footer {
+    text-align: center;
+    font-size: 0.8em;
+    color: #666;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+.news-link:hover,
+a:hover {
+    color: #ff6600;
+}
+
+.home-link {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    text-decoration: none;
+    color: #87CEEB; /* Light blue color */
+    font-size: 1em;
+}
+.top-row {
+    position: relative; /* 设置相对定位 */
+}
+
+#long-image-section {
+    position: absolute; /* 设置绝对定位 */
+    top: 100%; /* 从顶部位置的底部开始 */
+    left: 0; /* 位于左侧 */
+    width: 100%; /* 宽度占满父元素 */
+    margin-top: 20px; /* 与上方内容的间距 */
+}
+/* 导航链接样式 */
+.navigation {
+    display: block;
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+
+.navigation__item {
+    margin: 0 10px;
+}

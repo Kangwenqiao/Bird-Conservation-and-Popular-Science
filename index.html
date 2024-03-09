@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>鸟之道</title>
+    <!-- 引入 Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@^2.0/dist/tailwind.min.css" rel="stylesheet">
+    <!-- 引入自定义样式表 -->
+    <link rel="stylesheet" type="text/css" href="index/style.css">
+    <!-- 引入 FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <style>
+        .fixed-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 9999; /* 确保页眉始终在最顶层 */
+        }
+
+        .header-logo img {
+            width: 30px; /* 调整图片宽度 */
+            height: auto; /* 根据宽度自动调整高度 */
+        }
+        /* 自定义样式 */
+        .fixed-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 9999; /* 确保页眉始终在最顶层 */
+        }
+        .backdrop-blur-md {
+            backdrop-filter: blur(20px);
+        }
+        .product-image {
+            transition: transform 0.3s ease, z-index 0s ease 0.1s;
+            will-change: transform, z-index;
+            cursor: pointer;
+            width: 100%; /* 让图片宽度充满父容器 */
+            height: auto; /* 根据宽度自动调整高度 */
+            border-radius: 8px; /* 圆角边框 */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* 阴影效果 */
+            margin: auto; /* 图片居中 */
+            position: relative; /* 相对定位，为悬浮效果作准备 */
+        }
+        .product-image:hover {
+            z-index: 20; /* 鼠标悬浮时提升层级 */
+            transform: scale(1.1); /* 鼠标悬浮时放大 */
+        }
+        .feature-container {
+            margin-top: 20px; /* 特性框与图片间距 */
+            transition: opacity 0.3s ease; /* 平滑过渡效果 */
+            width: 100%; /* 宽度自适应 */
+        }
+        .video-background {
+            position: relative;
+            overflow: hidden;
+        }
+        .video-background video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: auto;
+            height: auto;
+            min-width: 100%;
+            min-height: 100%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+        }
+        .video-background .content {
+            position: relative;
+            z-index: 2;
+            /* 根据需要调整样式 */
+            text-align: center;
+            color: #fff;
+            padding: 20px;
+        }
+        .panel-cover {
+            position: relative;
+            overflow: hidden;
+        }
+        .video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* 保证视频覆盖整个容器，但仍保持比例 */
+            z-index: -1; /* 确保视频在内容之后 */
+        }
+        .backdrop-blur {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px); /* 对于旧版本的Safari */
+            display: flex;
+            justify-content: center; /* 水平居中 */
+            align-items: center; /* 垂直居中 */
+            height: 100%; /* 确保占满父元素的高度 */
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-900 text-gray-100">
+    <header class="bg-gray-800 p-4 fixed-header">
+        <div class="flex justify-between items-center">
+            <div class="header-logo">
+                <img src="images/831ff53dc1a262ae02e5f4a9b6108d6.png" alt="logo">
+            </div>
+            <div>
+                <a href="index.html" class="text-white mr-4">首页</a>
+				<a href="made.html" class="text-white mr-4">产品简介</a>
+                <a href="https://github.com/Kangwenqiao" class="text-white mr-4">团队简介</a>
+            </div>
+            <div>
+                <a href="mailto:wenqiaokang@outlook.com" class="text-white">联系我们</a>
+            </div>
+        </div>
+
+    </header>
+    <div id="panel" class="panel-cover">
+        <div class="backdrop-blur">
+            <video autoplay loop muted playsinline class="video-background">
+                <source src="images/black_and_white_-_25087 (1440p).mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <audio id="audioPlayer" loop>
+                <source src="audio/sunflower.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <div class="panel-main">
+                <div class="panel-main__inner panel-inverted">
+                    <div class="panel-main__content">
+                        <!-- 可点击的头像和博客信息 -->
+                        <div class="ih-item circle effect right_to_left" onclick="rotateImage()">
+                            <p class="panel-cover__description iUp">&nbsp;</p>
+                            <a href="#" title="" class="blog-button" onclick="rotateImage()">试试看吧</a>
+                                <div class="img" id="profileImage">
+                                    <img src="images/kang.png" alt="img" class="js-avatar iUp profilepic">
+                                </div>
+                                <!-- 博客标题和描述 -->
+                                <div class="info iUp">
+                                    <div class="info-back">
+                                        <h2>MoveForward</h2>
+                                        <p>2024 · 無限進步</p>
+                                    </div>
+                                </div>
+                           
+                        </div>
+                        <!-- 博客标题、副标题和分隔线 -->
+                        <p class="panel-cover__subtitle panel-subtitle iUp">Believe you can and you're halfway there.</p>
+                        <hr class="panel-cover__divider iUp" />
+                        <div class="mt-12 text-center">
+                            <a href="http://localhost:8501/" class="px-8 py-4 bg-gray-600 text-white rounded hover:bg-gray-700 transition duration-300 text-lg mr-4">智能问答</a>
+                            <a href="http://localhost:9001/" class="px-8 py-4 bg-gray-600 text-white rounded hover:bg-gray-700 transition duration-300 text-lg">图像识别</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="text-center mb-12">
+        <h1 class="text-5xl font-bold" style="background: linear-gradient(to right, #ffffff, #add8e6, #0000ff); -webkit-background-clip: text; color: transparent;"><br>鸟之道</h1>
+        <p class="mt-4 text-xl">AI可以为鸟类保护以及鸟类知识科普带来，高效、智能、个性化</p>
+    </div>
+    <div class="relative min-h-screen bg-cover bg-center" style="background-image: url('images/ee4a53960db8b7e6f23f83187dd9b97.png');">
+        <div class="absolute inset-0 bg-black opacity-60"></div>
+        <div class="backdrop-blur">
+            <div class="relative max-w-6xl mx-auto px-4 py-12">
+                <div class="relative max-w-6xl mx-auto px-4 py-12">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-start justify-items-center">
+                        <!-- 第一个特性及其图片 -->
+                        <div>
+                            <img src="texin/4778a11c41e0b7b3a9e0f1033b299bfe.png" alt="产品效果图1" class="product-image">
+                            <div class="bg-gray-800 bg-opacity-50 p-6 rounded-lg feature-container">
+                                <h2 class="text-xl font-semibold">瞬间识别，启程奇遇</h2>
+                                <p>&nbsp; &nbsp; &nbsp; &nbsp;不再是望而却步的困惑，而是一触即发的探索！我们的应用装备了经过深度训练的YOLOv8模型，能够在您上传的每一张鸟类照片中，精准捕捉并识别出鸟类的种类。</p>
+                            </div>
+                        </div>
+                        <!-- 第二个特性及其图片 -->
+                        <div>
+                            <img src="texin/a5cf6b688e4a4f1961fceab15cb9a1e2.png" alt="产品效果图2" class="product-image">
+                            <div class="bg-gray-800 bg-opacity-50 p-6 rounded-lg feature-container">
+                                <h2 class="text-xl font-semibold">科普知识，触手可及</h2>
+                                <p>&nbsp; &nbsp; &nbsp; &nbsp;当识别变成了开始知识的海洋便是您的下一个目的地。我们采用了先进的ChatGLM2语言模型，为您识别的每一种鸟类提供丰富详细的科普描述。</p>
+                            </div>
+                        </div>
+                        <!-- 第三个特性及其图片 -->
+                        <div>
+                            <img src="texin/0e41aab4980785ce8d01c5c31aca3e4d.png" alt="产品效果图3" class="product-image">
+                            <div class="bg-gray-800 bg-opacity-50 p-6 rounded-lg feature-container">
+                                <h2 class="text-xl font-semibold">互动体验，简洁直观</h2>
+                                <p>&nbsp; &nbsp; &nbsp; &nbsp;最好的体验是无需说明书的体验。通过Streamlit打造的用户界面，简单明了却功能强大，只需几步就能完成上传、识别、学习的全过程。</p>
+                            </div>
+                        </div>
+                        <!-- 第四个特性及其图片 -->
+                        <div>
+                            <img src="texin/d2d74cf05512255ab13be3e4b70fb31b.png" alt="产品效果图4" class="product-image">
+                            <div class="bg-gray-800 bg-opacity-50 p-6 rounded-lg feature-container">
+                                <h2 class="text-xl font-semibold">个性化问答，贴心服务</h2>
+                                <p>&nbsp; &nbsp; &nbsp; &nbsp;每个人的好奇心都是独一无二的，我们的应用通过整合LangChain框架和CHATGLM模型，提供了一站式的个性化问答服务。</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="bg-gray-800 p-4 text-center flex justify-around">
+        <p class="text-white">感谢以下老师和开发者团队:</p>
+        <ul class="text-white flex flex-wrap">
+            <li class="mr-8">ncwu韩珂教授</li>
+            <li class="mr-8">CUP研究生王森</li>
+            <li class="mr-8">智譜AI</li>
+            <li class="mr-8">清华GEK实验室</li>
+            <li class="mr-8">streamlit开发团队</li>
+            <li class="mr-8">langchain开发团队</li>
+            <li>git开发团队</li>
+        </ul>
+    </footer>
+
+   <script>
+    function rotateImage() {
+        var img = document.getElementById('profileImage');
+        img.style.transition = 'transform 2s ease';
+        img.style.transform = 'rotate(360deg)';
+    }
+</script>
+	
+</body>
+</html>

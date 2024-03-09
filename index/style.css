@@ -1,0 +1,138 @@
+/* 基本布局和字体设置 */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* 背景层样式 */
+.background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-size: cover;
+    background-position: center;
+    z-index: -1; /* 确保背景在内容之下 */
+    opacity: 0; /* 初始透明度为0 */
+    transition: opacity 1s ease-in-out; /* 平滑过渡效果 */
+}
+
+/* 淡入效果 */
+.fade-in {
+    opacity: 1;
+}
+
+/* 头像旋转动画 */
+@keyframes rotateImage {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.rotate {
+    animation: rotateImage 2s linear infinite;
+}
+
+/* 背景和主面板样式 */
+.panel-cover {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+}
+
+.panel-main {
+    width: 80%;
+    text-align: center;
+}
+
+/* 头像图片样式 */
+.img {
+    width: 100px; /* 调整头像大小 */
+    height: 100px;
+    border-radius: 50%; /* 圆形头像 */
+    overflow: hidden;
+}
+
+.img img {
+    width: 100%;
+    height: auto;
+}
+
+/* 头像图片居中 */
+.ih-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+/* 导航链接样式 */
+.navigation {
+    display: block;
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+
+.navigation__item {
+    margin: 0 10px;
+}
+
+.blog-button {
+    display: flex; /* 使内部内容居中 */
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    padding: 10px;
+    background: #21121121;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.blog-button:hover {
+    background: #0056b3;
+}
+
+/* 其他样式，如标题、副标题等 */
+.panel-title, .panel-subtitle, .panel-cover__description {
+    margin: 10px 0;
+}
+
+/* 社交和导航图标样式 */
+.social.iconfont {
+    font-size: 20px;
+    margin-right: 5px;
+}
+
+/* 标题和副标题样式 */
+.panel-title,
+.panel-subtitle,
+.panel-cover__description {
+    color: white; /* 文本颜色为白色 */
+    font-size: 1.2em; /* 调整字体大小，根据需要修改 */
+}
+
+/* 导航链接样式 */
+.navigation a {
+    color: white; /* 文本颜色为白色 */
+    font-size: 1.2em; /* 调整字体大小 */
+}
+
+/* 社交链接和邮件链接样式 */
+.navigation--social a {
+    color: white; /* 文本颜色为白色 */
+    font-size: 1.2em; /* 调整字体大小 */
+}
+
+/* 更多文本样式 - 根据实际结构添加 */

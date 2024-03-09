@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>鸟之道</title>
+    <!-- 引入 Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@^2.0/dist/tailwind.min.css" rel="stylesheet">
+    <!-- 引入自定义样式表 -->
+    <link rel="stylesheet" type="text/css" href="index/style.css">
+    <!-- 引入 FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <style>
+        .fixed-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 9999; /* 确保页眉始终在最顶层 */
+        }
+
+        .header-logo img {
+            width: 30px; /* 调整图片宽度 */
+            height: auto; /* 根据宽度自动调整高度 */
+        }
+        /* 自定义样式 */
+        .fixed-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 9999; /* 确保页眉始终在最顶层 */
+        }
+        .backdrop-blur-md {
+            backdrop-filter: blur(20px);
+        }
+        .product-image {
+            transition: transform 0.3s ease, z-index 0s ease 0.1s;
+            will-change: transform, z-index;
+            cursor: pointer;
+            width: 100%; /* 让图片宽度充满父容器 */
+            height: auto; /* 根据宽度自动调整高度 */
+            border-radius: 8px; /* 圆角边框 */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06); /* 阴影效果 */
+            margin: auto; /* 图片居中 */
+            position: relative; /* 相对定位，为悬浮效果作准备 */
+        }
+        .product-image:hover {
+            z-index: 20; /* 鼠标悬浮时提升层级 */
+            transform: scale(1.1); /* 鼠标悬浮时放大 */
+        }
+        .feature-container {
+            margin-top: 20px; /* 特性框与图片间距 */
+            transition: opacity 0.3s ease; /* 平滑过渡效果 */
+            width: 100%; /* 宽度自适应 */
+        }
+        .video-background {
+            position: relative;
+            overflow: hidden;
+        }
+        .video-background video {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: auto;
+            height: auto;
+            min-width: 100%;
+            min-height: 100%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+        }
+        .video-background .content {
+            position: relative;
+            z-index: 2;
+            /* 根据需要调整样式 */
+            text-align: center;
+            color: #fff;
+            padding: 20px;
+        }
+        .panel-cover {
+            position: relative;
+            overflow: hidden;
+        }
+        .video-background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* 保证视频覆盖整个容器，但仍保持比例 */
+            z-index: -1; /* 确保视频在内容之后 */
+        }
+        .backdrop-blur {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px); /* 对于旧版本的Safari */
+            display: flex;
+            justify-content: center; /* 水平居中 */
+            align-items: center; /* 垂直居中 */
+            height: 100%; /* 确保占满父元素的高度 */
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-900 text-gray-100">
+    <header class="bg-gray-800 p-4 fixed-header">
+        <div class="flex justify-between items-center">
+            <div class="header-logo">
+                <img src="images/831ff53dc1a262ae02e5f4a9b6108d6.png" alt="logo">
+            </div>
+            <div>
+                <a href="#" class="text-white mr-4">首页</a>
+                <a href="#" class="text-white mr-4">团队简介</a>
+                <a href="#" class="text-white">开发流程简介</a>
+            </div>
+            <div>
+                <a href="mailto:wenqiaokang@outlook.com" class="text-white">联系我们</a>
+            </div>
+        </div>
+
+    </header>
+    
+
+    <div class="relative min-h-screen bg-cover bg-center" >
+		
+		
+		
+		
+		
+        
+    </div>
+    <footer class="bg-gray-800 p-4 text-center flex justify-around">
+        <p class="text-white">感谢以下老师和开发者团队:</p>
+        <ul class="text-white flex flex-wrap">
+            <li class="mr-8">ncwu韩珂教授</li>
+            <li class="mr-8">CUP研究生王森</li>
+            <li class="mr-8">智譜AI</li>
+            <li class="mr-8">清华GEK实验室</li>
+            <li class="mr-8">streamlit开发团队</li>
+            <li class="mr-8">langchain开发团队</li>
+            <li>git开发团队</li>
+        </ul>
+    </footer>
+
+	
+</body>
+</html>
