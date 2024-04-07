@@ -1,4 +1,8 @@
 # 鸟之道
+![tstmp_20240407110050](https://github.com/Kangwenqiao/Bird-Conservation-and-Popular-Science/assets/118408678/54cf9b87-03d1-45e5-bd44-a81025dfd34f)
+
+![tstmp_20240407110133](https://github.com/Kangwenqiao/Bird-Conservation-and-Popular-Science/assets/118408678/9be08568-c509-4de0-8662-c7365956faf2)
+
 
 ## 项目成员信息
 
